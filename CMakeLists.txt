@@ -21,7 +21,6 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(rosidl_generator_dds_idl REQUIRED)
 
@@ -30,6 +29,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
         "msg/BmsCmd.msg"
         "msg/BmsState.msg"
         "msg/Error.msg"
+        "msg/Go2FrontVideoData.msg"
         "msg/HeightMap.msg"
         "msg/IMUState.msg"
         "msg/InterfaceConfig.msg"
@@ -48,8 +48,9 @@ rosidl_generate_interfaces(${PROJECT_NAME}
         "msg/TimeSpec.msg"
         "msg/UwbState.msg"
         "msg/UwbSwitch.msg"
+        "msg/VoxelMapCompressed.msg"
+        "msg/VoxelHeightMapState.msg"
         "msg/WirelessController.msg"
-  DEPENDENCIES geometry_msgs
 )
 
 rosidl_generate_dds_interfaces(
